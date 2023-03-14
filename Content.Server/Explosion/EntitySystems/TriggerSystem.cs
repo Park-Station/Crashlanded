@@ -138,6 +138,8 @@ namespace Content.Server.Explosion.EntitySystems
 
         public void HandleTimerTrigger(EntityUid uid, EntityUid? user, float delay , float beepInterval, float? initialBeepDelay, SoundSpecifier? beepSound, AudioParams beepParams)
         {
+            Logger.DebugS("trigger", "Timer trigger started on {0} with delay {1}", uid, delay);
+
             if (delay <= 0)
             {
                 RemComp<ActiveTimerTriggerComponent>(uid);

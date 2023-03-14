@@ -24,6 +24,12 @@ public sealed class LockComponent : Component
     public bool LockOnClick;
 
     /// <summary>
+    /// Whether it's meant to unlock through regular interaction.
+    /// </summary>
+    [DataField("unlockOnClick"), ViewVariables(VVAccess.ReadWrite)]
+    public bool UnlockOnClick = true;
+
+    /// <summary>
     /// The sound played when unlocked.
     /// </summary>
     [DataField("unlockingSound"), ViewVariables(VVAccess.ReadWrite)]

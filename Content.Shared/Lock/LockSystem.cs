@@ -195,6 +195,9 @@ public sealed class LockSystem : EntitySystem
         if (!HasComp<HandsComponent>(user))
             return false;
 
+        if (!EntityManager.GetComponent<LockComponent>(uid).UnlockOnClick)
+            return false;
+
         var ev = new LockToggleAttemptEvent(user, quiet);
         RaiseLocalEvent(uid, ref ev, true);
         return !ev.Cancelled;
